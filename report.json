@@ -1,0 +1,59 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Invalid pytest version (0.0.1) - not a valid release version",
+      "fix": "Updated pytest from 0.0.1 to 7.4.3",
+      "status": "fixed"
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Invalid requests version (0.0.1) - not a valid release version",
+      "fix": "Updated requests from 0.0.1 to 2.31.0",
+      "status": "fixed"
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_calc.py",
+      "description": "Unit test assertion error - test_multiply() expects multiply(2, 3) to equal 5, but the function correctly returns 6",
+      "fix": "Updated assertion from multiply(2, 3) == 5 to multiply(2, 3) == 6",
+      "status": "fixed"
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "high",
+      "file": "logs/",
+      "description": "Missing logs directory - CI/CD pipelines write logs to logs/test_run.log but the directory did not exist",
+      "fix": "Created logs/ directory to store test execution logs",
+      "status": "fixed"
+    }
+  ],
+  "summary": {
+    "total_issues": 4,
+    "ci_issues": 3,
+    "cd_issues": 1,
+    "fixed_issues": 4,
+    "failed_issues": 0,
+    "severity_breakdown": {
+      "high": 4,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "test_results": {
+    "ci_pipeline": "ready",
+    "cd_pipeline": "ready",
+    "environment": ".venv",
+    "python_version": "3.14.0",
+    "pip_version": "25.3"
+  }
+}
