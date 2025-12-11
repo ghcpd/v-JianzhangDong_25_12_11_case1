@@ -1,10 +1,10 @@
-from calc import add, div
+from apps.calc import add, multiply, subtract
 
 def test_add():
-    assert add(1, 2) == 3
+    assert add(2, 3) == 5
 
-def test_div():
-    div(1, 0)
+def test_multiply():
+    assert multiply(2, 3) == 5
 
-def test_syntax_error:
-    assert True
+def test_subtract():
+    assert subtract(5, 2) == 3
