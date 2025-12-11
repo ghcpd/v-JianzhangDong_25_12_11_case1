@@ -1,0 +1,11 @@
+import subprocess, os, sys
+root = os.path.abspath('.')
+venv = os.path.join(root, '.venv')
+env = os.environ.copy()
+env['PATH'] = os.path.join(venv, 'Scripts') + os.pathsep + env.get('PATH','')
+proc = subprocess.run(['cmd','/c','cd\\cd_pipeline.bat'], env=env, cwd=os.path.join(root,'cd'), capture_output=True, text=True)
+print('returncode:', proc.returncode)
+print('stdout:')
+print(proc.stdout)
+print('stderr:')
+print(proc.stderr)
