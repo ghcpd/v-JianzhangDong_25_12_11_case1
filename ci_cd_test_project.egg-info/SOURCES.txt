@@ -1,0 +1,12 @@
+README.md
+setup.py
+apps/__init__.py
+apps/calc.py
+apps/string_utils.py
+ci_cd_test_project.egg-info/PKG-INFO
+ci_cd_test_project.egg-info/SOURCES.txt
+ci_cd_test_project.egg-info/dependency_links.txt
+ci_cd_test_project.egg-info/top_level.txt
+tests/__init__.py
+tests/test_calc.py
+tests/test_string_utils.py

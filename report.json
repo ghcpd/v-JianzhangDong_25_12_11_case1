@@ -1,0 +1,46 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Invalid package versions (pytest==0.0.1, requests==0.0.1) causing installation failures"
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_calc.py",
+      "description": "Incorrect test assertion in test_multiply, expected 6 but asserted 5"
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "medium",
+      "file": "ci/ci_pipeline.bat",
+      "description": "Logs directory not created before writing log file, causing potential path errors"
+    },
+    {
+      "id": "CI-004",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Version conflicts with globally installed pytest plugins, preventing test execution"
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "medium",
+      "file": "cd/cd_pipeline.bat",
+      "description": "Deploy folder C:\\FakeDeployFolder does not exist, causing xcopy to fail"
+    },
+    {
+      "id": "CD-002",
+      "type": "CD",
+      "severity": "medium",
+      "file": "cd/cd_pipeline.bat",
+      "description": "Incorrect dist directory path in xcopy command, should be dist\\* instead of ..\\dist\\*"
+    }
+  ]
+}
