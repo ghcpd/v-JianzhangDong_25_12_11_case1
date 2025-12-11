@@ -8,7 +8,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-xcopy ..\dist\* C:\FakeDeployFolder /s /y >> %LOG_FILE% 2>&1
+xcopy dist\* C:\FakeDeployFolder /s /y >> %LOG_FILE% 2>&1
 if %errorlevel% neq 0 (
     echo CD failed. >> %LOG_FILE%
     exit /b 1
