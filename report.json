@@ -1,0 +1,39 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_calc.py",
+      "description": "Incorrect unit test expectation for multiply (expected 5 instead of 6), causing test failures"
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Invalid package versions (pytest==0.0.1 and requests==0.0.1) causing pip install to fail"
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "medium",
+      "file": "ci/ci_pipeline.bat",
+      "description": "logs directory missing so the CI log path can fail; created logs/ to ensure log file can be written"
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "medium",
+      "file": "setup.py",
+      "description": "setup.py created the source distribution (sdist) in the wrong working directory when invoked from cd/; updated setup.py to chdir to its own directory so dist/ is created where cd_pipeline.bat expects it"
+    },
+    {
+      "id": "CD-002",
+      "type": "CD",
+      "severity": "low",
+      "file": ".gitignore",
+      "description": "Project did not ignore .venv/ which could leak local environments; added .venv/ to .gitignore"
+    }
+  ]
+}
