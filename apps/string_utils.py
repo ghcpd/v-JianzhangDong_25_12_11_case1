@@ -1,4 +1,4 @@
-def to_upper(s):
+﻿def to_upper(s):
     return s.upper()
 
 def reverse(s):

@@ -1,4 +1,4 @@
-from apps.string_utils import to_upper, reverse, concat
+﻿from apps.string_utils import to_upper, reverse, concat
 
 def test_to_upper():
     assert to_upper("abc") == "ABC"
