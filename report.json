@@ -1,0 +1,53 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "Invalid dependency versions (pytest==0.0.1, requests==0.0.1) causing 'pip install' to fail"
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_calc.py",
+      "description": "Incorrect assertion for multiply (expected 5 instead of 6) causing test failure"
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "medium",
+      "file": "setup.py",
+      "description": "Missing 'setuptools' in environment caused 'python setup.py sdist' to fail"
+    },
+    {
+      "id": "CD-002",
+      "type": "CD",
+      "severity": "medium",
+      "file": "cd/cd_pipeline.bat",
+      "description": "Deployment target folder (C:\\FakeDeployFolder) may not exist, causing 'xcopy' to fail"
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "low",
+      "file": "ci/ci_pipeline.bat",
+      "description": "Logs directory missing, pipelines assume logs/ exists; created and ensured by auto_test.py"
+    },
+    {
+      "id": "CI-004",
+      "type": "CI",
+      "severity": "high",
+      "file": "auto_test.py",
+      "description": "Created a pytest shim in the venv Scripts directory so 'pytest' invoked by the CI batch uses the venv's Python and not global plugins. This prevents plugin compatibility errors."
+    },
+    {
+      "id": "CD-003",
+      "type": "CD",
+      "severity": "low",
+      "file": "cd/cd_pipeline.bat",
+      "description": "Ensured the deployment target folder (C:\\FakeDeployFolder) exists before running CD to avoid xcopy path errors. auto_test.py will create this folder if missing."
+    }
+  ]
+}
