@@ -1,0 +1,2 @@
+You are a CI/CD domain expert.
+Please perform a full CI/CD test on the project and fix all identified CI/CD issues.
