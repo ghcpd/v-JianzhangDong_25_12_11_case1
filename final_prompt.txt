@@ -1,2 +1,38 @@
 You are a CI/CD domain expert.
 Please perform a full CI/CD test on the project and fix all identified CI/CD issues.
+
+Complete the following tasks:
+1. After completing the fixes, generate an auto_test.py file that meets the following requirements:
+   - Use the environment created under the .venv/ directory to execute .\ci\ci_pipeline.bat and .\cd\cd_pipeline.bat.
+   - Write all test results to logs/test_run.log (create the logs/ directory if it doesn’t exist).
+   - Append the environment name, absolute path, and Python/pip versions to README.md after creation.
+   - The test is considered passed only if both .\ci\ci_pipeline.bat and .\cd\cd_pipeline.bat execute without any errors.
+
+2. You must generate a report.json file documenting all CI/CD fixes.
+The report should follow the structure below:
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_user_service.py",
+      "description": "Unit test dependency missing, causing the tests to fail"
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "medium",
+      "file": "deploy/deploy.ps1",
+      "description": "Incorrect deployment script path preventing artifact copy"
+    }
+  ]
+}
+
+3. Based on the modified requirements.txt create a clean virtual environment under .venv/. Ensure that:
+ - Do not reuse any existing environment. 
+ - If .venv/ already exists, delete and recreate it.
+ - Install all dependencies into .venv/.
+ - Generate or update .gitignore so that .venv/ will not be uploaded to Git.
+
+4. Do not modify .\ci\ci_pipeline.bat and .\cd\cd_pipeline.bat
