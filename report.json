@@ -1,0 +1,53 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_calc.py",
+      "description": "Test file contained markdown code fences and an incorrect assertion for multiply (expected 5 instead of 6), causing pytest failures."
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "high",
+      "file": "tests/test_string_utils.py",
+      "description": "Test file contained markdown code fences, causing syntax errors during test collection."
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "high",
+      "file": "apps/calc.py",
+      "description": "Source files contained markdown code fences which caused import/syntax errors when running tests."
+    },
+    {
+      "id": "CI-004",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "requirements.txt contained code fences and invalid package pins (pytest==0.0.1, requests==0.0.1) causing pip install failures."
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "medium",
+      "file": "setup.py",
+      "description": "Packaging step wrote artifacts to the wrong dist directory when invoked from the cd/ folder, preventing the deployment copy step from finding artifacts. Adjusted setup.py to emit sdist artifacts into the repository root dist/ directory."
+    },
+    {
+      "id": "CD-002",
+      "type": "CD",
+      "severity": "low",
+      "file": "README.md",
+      "description": "Missing README caused a packaging warning during sdist. Added a README.md to address the warning."
+    },
+    {
+      "id": "CI-005",
+      "type": "CI",
+      "severity": "low",
+      "file": ".gitignore",
+      "description": "Repository missing .gitignore entries for the virtual environment. Added .venv/ to .gitignore to avoid committing local environments."
+    }
+  ]
+}
